@@ -37,7 +37,6 @@ int traegheit(double N, double M, double ZM_R, Vektor a , Vektor u, double ZM_L 
     I += m * r * r;
   }
 
-
  tr   << std::setw(3) << ZM_R << " |" 
       << std::setw(3) << ZM_L << " |" 
       << std::setw(4) << M << " |"
