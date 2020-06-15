@@ -43,10 +43,10 @@ int traegheit(double N, double M, double ZM_R, Vektor a , Vektor u, double ZM_L 
       << std::setw(4) << M << " |"
       << std::setw(2) << a << " |" 
       << std::setw(2) << u << " ||" 
-      << std::setw(13) << M*(ZM_R*ZM_R+std::pow((((a).Vektor::kreuz(u)).Vektor::betrag() / u.Vektor::betrag()),2)) << " |"
-      << std::setw(12) << J << " ||" 
-      << std::setw(13) << M*(ZM_R*ZM_R/2+std::pow((((a).Vektor::kreuz(u)).Vektor::betrag() / u.Vektor::betrag()),2))  << " |" 
-      << std::setw(12) << I << std::endl;
+      << std::setw(14) << M*(ZM_R*ZM_R+std::pow((((a).Vektor::kreuz(u)).Vektor::betrag() / u.Vektor::betrag()),2)) << " |"
+      << std::setw(13) << J << " ||" 
+      << std::setw(14) << M*(ZM_R*ZM_R/2+std::pow((((a).Vektor::kreuz(u)).Vektor::betrag() / u.Vektor::betrag()),2))  << " |" 
+      << std::setw(13) << I << std::endl;
 
   return 0;
 }
@@ -57,13 +57,13 @@ int main() {
   tr  << std::setw(3) << "R[m]" << "|" 
       << std::setw(3) << "L[m]" << "|" 
       << std::setw(3) << "M[kg]" << "|"
-      << std::setw(11) << "a\u20D7" << " |" 
+      << std::setw(11) << "a\u20D7" << " |"  //Bitte in Firefox öffnen
       << std::setw(11) << "u\u20D7" << " ||" 
-      << std::setw(8) << "ZM analytisch"  << " |"
-      << std::setw(7) << "ZM berechnet" << " ||" 
-      << std::setw(8) << "VZ analytisch"  << " |" 
-      << std::setw(11) << "VZ berechnet"
-      << "\n----|----|-----|---------|---------||--------------|-------------||--------------|------------\n";
+      << std::setw(8) << "Jzm analytisch"  << " |"
+      << std::setw(7) << "Jzm berechnet" << " ||" 
+      << std::setw(8) << "Jvz analytisch"  << " |" 
+      << std::setw(11) << "Jvz berechnet"
+      << "\n----|----|-----|---------|---------||---------------|--------------||---------------|-------------\n";
 
   Vektor a(0,0,0); // Punkt auf der Rotationsachse
   Vektor u(0,0,1); // Richtung der Rotationsachse
