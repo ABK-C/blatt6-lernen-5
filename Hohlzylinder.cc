@@ -1,17 +1,17 @@
-#include "Vollzylinder.hh"
+#include "Hohlzylinder.hh"
 #include "Koerper.hh"
 #include <cmath>
 #include <cstdlib>
 
-Vollzylinder::Vollzylinder(double nr, double nl , double ne, double nm) {
+Hohlzylinder::Hohlzylinder(double nr, double nl , double ne, double nm) {
   r_ = nr;
   l_ = nl;
   e_ = ne;
   m_ = nm;
 }
 
-Vektor Vollzylinder::punkt() {
-  double R = r_ *  sqrt(rand() / (double)RAND_MAX);
+Vektor Hohlzylinder::punkt() {
+  double R = sqrt((r_ * r_ - e_ * e_  ) * rand() / (double)RAND_MAX + e_ * e_ );
   double phi = 2 * M_PI * rand() / (double)RAND_MAX;
   double z = l_ * (rand() / (double)RAND_MAX - 0.5);
 
@@ -20,6 +20,6 @@ Vektor Vollzylinder::punkt() {
   return Vektor(x, y, z);
 }
 
-double Vollzylinder::Janalytisch() {
-  return (m_ * r_ * r_)/2;
+double Hohlzylinder::Janalytisch() {
+  return (m_ *( r_ * r_ + e_ * e_  ))/2;
 }
