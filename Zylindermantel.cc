@@ -1,11 +1,13 @@
 #include "Zylindermantel.hh"
-
+#include "Koerper.hh"
 #include <cmath>
 #include <cstdlib>
 
-Zylindermantel::Zylindermantel(double nr, double nl) {
+Zylindermantel::Zylindermantel(double nr, double nl, double ne, double nm) {
   r_ = nr;
   l_ = nl;
+  e_ = ne;
+  m_ = nm;
 }
 
 Vektor Zylindermantel::punkt() {
@@ -17,3 +19,7 @@ Vektor Zylindermantel::punkt() {
   double y = R* sin(phi);
   return Vektor(x, y, z);
 };
+
+double Zylindermantel::Janalytisch() {
+  return m_ * r_ * r_;  
+}

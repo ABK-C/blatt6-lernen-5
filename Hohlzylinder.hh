@@ -1,22 +1,22 @@
-#ifndef VOLLZYLINDER_HH
-#define VOLLZYLINDER_HH
+#ifndef HOHLZYLINDER_HH
+#define HOHLZYLINDER_HH
 #include "Koerper.hh"
 #include "Vektor.hh"
 
-class Vollzylinder : public Koerper{
+class Hohlzylinder : public Koerper{
 public:
-  Vollzylinder(double nr, double nl, double ne, double nm);
+  Hohlzylinder(double nr, double nl, double ne, double nm);
 
   Vektor punkt();
   double mass() {return m_;}
   double rad() {return r_;}
   double hoehe() {return l_;}
-  double extra() {return 0;}
+  double extra() {return e_;}
   double Janalytisch();
-  std::string name() {return "Vollzylinder";}
-  std::string v1() {return " R[m]";}
+  std::string name() {return "Hohlzylinder";}
+  std::string v1() {return "R2[m]";}
   std::string v2() {return " L[m]";}
-  std::string v3() {return " --- ";}
+  std::string v3() {return "R1[m]";}
   std::string v4() {return "M[kg]";}
    
 private:

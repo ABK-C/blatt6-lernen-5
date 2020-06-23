@@ -1,2 +1,2 @@
 language = "cpp"
-run = " https://classroom.github.com/g/nryp-499 "
+run = "g++ Vektor.cc Zylindermantel.cc Vollzylinder.cc Kugelmantel.cc Kugel.cc Quader.cc Hohlzylinder.cc traegheit.cc -o traegheit; ./traegheit"
